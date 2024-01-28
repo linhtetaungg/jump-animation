@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jump Animation</title>
     <style>
-     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    
-    .photo {
-      position: relative;
-      animation: jumpAnimation 2s ease-in-out infinite;
-    }
-    
-    @keyframes 
-    jumpAnimation {
-      0%, 50%, 100% {top: 0;}
-      25%, 75% {top: -30px;}
-    }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .photo {
+        position: relative;
+      }
+
+      .photo img {
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .photo:hover img {
+        animation: jumpAnimation 1s ease-in-out infinite;
+      }
+
+      @keyframes jumpAnimation {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-30px); }
+      }
     </style>
   </head>
   <body>
